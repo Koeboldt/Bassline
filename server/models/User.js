@@ -1,26 +1,7 @@
 const {Schema, model} = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const favoriteSchema = new Schema(
-    {
-        songName: {
-            type: String,
-            required: true,
-        },
-        artistName:{
-            type: String,
-            required: true,
-        },
-        songLink:{
-            type: String,
-            required: true,
-        },
-        songImg:{
-            type: String,
-            required: true,
-        }
-    }
-);
+
 // todo add favorites, check if this works later.
 const userSchema = new Schema(
     {
@@ -51,10 +32,8 @@ const userSchema = new Schema(
             type: String,
         },
         favorites: [{
-            favoriteSchema
-            /*name: String,
-            artistName: String, 
-            link: String */
+            type: Schema.Types.ObjectId,
+            ref: 'favorite'
             }],
         friends:[{
             type: Schema.Types.ObjectId,
