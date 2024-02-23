@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { ApolloServer } = require('apollo-server-express');
+//const { ApolloServer } = require('apollo-server-express');
 // const { typeDefs, resolvers } = require('./schemas');
 
 const app = express();
@@ -17,12 +17,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB database');
 
-  const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-  });
+  
+  //const server = new ApolloServer({
+    // typeDefs,
+    // resolvers,
+  // });
 
-  server.applyMiddleware({ app });
+  //server.applyMiddleware({ app });
 
   // Start your server
   app.listen(PORT, () => {
