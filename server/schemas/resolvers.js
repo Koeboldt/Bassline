@@ -35,11 +35,15 @@ const resolvers = {
             return { token, user};
         },
         login: async (parent, {username, password})=> {
-            const getUser= await Users.findOne({username});
+            
+            let getUser = await Users.findOne({username});
             if(!getUser){
-                throw AuthenticationError;
+                getUser = await Users.findOne({email: username});
+                if(!getUser){
+                    throw AuthenticationError
+                }
             }
-            const passwordCheck= await user.checkPassword(password);
+            const passwordCheck = await user.checkPassword(password);
             if(!passwordCheck){
                 throw AuthenticationError
             }
