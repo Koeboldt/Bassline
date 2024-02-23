@@ -7,9 +7,10 @@ const commentsSchema = new Schema (
             required: true,
             maxLength: 280
         },
-        username:{
+        commentAuthor:{
             type: String,
-            required: true
+            required: true,
+            trim: true
         },
         createdAt:{
             type: Date,
@@ -26,9 +27,10 @@ const blogSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    username:{
+    blogAuthor:{
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     comments: [commentsSchema]
 },{
