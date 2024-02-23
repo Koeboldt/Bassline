@@ -1,4 +1,4 @@
-const { Users, Blogs} = require('../models');
+const { Users, Blogs, Favorites} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -35,7 +35,6 @@ const resolvers = {
             return { token, user};
         },
         login: async (parent, {username, password})=> {
-            
             let getUser = await Users.findOne({username});
             if(!getUser){
                 getUser = await Users.findOne({email: username});
@@ -43,13 +42,39 @@ const resolvers = {
                     throw AuthenticationError
                 }
             }
-            const passwordCheck = await user.checkPassword(password);
+            const passwordCheck = await getUser.checkPassword(password);
             if(!passwordCheck){
                 throw AuthenticationError
             }
             const token= signToken(getUser);
-            return {token, user};
+            return {token, getUser};
         },
+        addFavorite: async (parent , {songName, artistName, songLink, albumArt }, context)=> {
+            const favorite = await Favorites.create({ songName, artistName, songLink, albumArt});
+            await Users.findOneAndUpdate({_id: context.user._id}, {$addToSet: {favorites: favorite._id}})
+        },
+        addBlog: async (parent, {blogText, blogAuthor})=> {
+            const newBlog = await Blogs.create({ blogText, blogAuthor});
+            return newBlog;
+        },
+        addComment: async (parent, {blogId, commentText,commentAuthor })=>{
+            return Blogs.findOneAndUpdate({_id: blogId},{$addToSet: {comments: {commentText, commentAuthor}}},{new: true});
+        },
+        removeUser: async (parent, args, context) => {
+            if(context.user){
+                return Users.findOneAndDelete({_id: context.user._id});
+            }
+            throw AuthenticationError;
+        },
+        removeBlog: async (parent, {blogId}, context) => {
+                return Blogs.findOneAndDelete({_id: blogId ,blogAuthor: context.user.username});
+        },
+        removeComment: async (parent, {blogId, commentId}, context) => {
+            return  Blogs.findOneAndUpdate({_id: blogId}, {$pull: {comments: {_id: commentId, commentAuthor: context.user.username} } }, {new: true} );
+        },
+        removeFavorite: async (parent, { favoriteId})=> {
+            return Favorites.findOneAndDelete({_id: favoriteId });
+        }
     }
 }
 

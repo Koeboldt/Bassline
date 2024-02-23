@@ -53,7 +53,7 @@ addBlog(blogText: String!, blogAuthor: String!): Blog
 addComment(blogId: ID!, commentText: String!, commentAuthor: String!): Blog
 removeUser: User
 removeBlog(blogId: ID!): Blog
-removeFavorite(favoriteId: ID!): User
 removeComment(blogId: ID!, commentId: ID!): Blog
+removeFavorite(favoriteId: ID!): User
 }
 `
