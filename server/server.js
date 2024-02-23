@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-mongoose.connect('mongodb://localhost:27017/BasslineDB', { // Be sure to create this connection in MongoDB
+mongoose.connect('mongodb://localhost:27017/Bassline', { // Be sure to create this connection in MongoDB
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
