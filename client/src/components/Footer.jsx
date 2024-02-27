@@ -4,7 +4,7 @@ import '../App.css';
 
 const { Footer } = Layout;
 
-function Footer() {
+function FooterComponent() {
   return (
     <Layout className="layout">
       <Footer className="footer">
@@ -14,4 +14,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterComponent;
