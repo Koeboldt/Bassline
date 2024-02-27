@@ -1,11 +1,15 @@
-import SearchPage from './pages/SearchPage'
-import Login from './pages/Login1'
+import { Outlet } from 'react-router-dom'
+import 'antd/dist/antd.css';
+import HeaderComponent from './components/Header';
+import FooterComponent from './components/Footer';
 
 function App() {
 
   return (
     <>
-      <Login></Login>
+    <HeaderComponent />
+      <Outlet />
+      <FooterComponent />
     </>
   )
 }

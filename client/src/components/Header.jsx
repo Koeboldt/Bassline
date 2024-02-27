@@ -1,21 +1,22 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
+import { Link } from 'react-router-dom'
 import '../App.css'
 const { Header } = Layout;
 
-function Header() {
+function HeaderComponent() {
   return (
     <Layout className="layout">
       <Header>
         <div className="logo" />
         <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">Home</Menu.Item>
-          <Menu.Item key="2">Donate</Menu.Item>
-          <Menu.Item key="3">Contact</Menu.Item>
+          <Menu.Item key="1"><Link to='/'>Home</Link></Menu.Item>
+          <Menu.Item key="2"><Link to='/profile'>Profile</Link></Menu.Item>
+          <Menu.Item key="3"><Link to='/search'>Search</Link></Menu.Item>
         </Menu>
       </Header>
     </Layout>
   );
 }
 
-export default Header;
+export default HeaderComponent;

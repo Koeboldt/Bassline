@@ -23,7 +23,7 @@ A blog for music fans.
 * TO BE ADDRESSED
 
 ## Credits
-* CWOChris, GoodK-G, FirefoxFlareon, Tatro009, Koeboldt
+* GoodK-G, FirefoxFlareon, Tatro009, Koeboldt, CWOChris
 
 ## License
 This project is licensed under the MIT license. https://opensource.org/licenses/MIT
