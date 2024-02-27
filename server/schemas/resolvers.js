@@ -6,8 +6,8 @@ const resolvers = {
         users: async ()=> {
             return Users.find();
         },
-        user: async (parent, {userId})=> {
-            return Users.findOne({_id:userId});
+        user: async (parent, {username})=> {
+            return Users.findOne({username: username});
         },
         me: async (parent, args, context) => {
             if(context.user){
@@ -24,7 +24,7 @@ const resolvers = {
         },
         myBlogs: async (parent, args, context) =>{
             if(context.user){
-                return Blogs.find(context.user).sort({createdAt: -1});
+                return Blogs.find(context.user.username).sort({createdAt: -1});
             }
         }
     },

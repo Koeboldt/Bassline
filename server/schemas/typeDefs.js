@@ -6,10 +6,9 @@ type Auth{
 
 type User {
     _id: ID
-    name: String!
+    username: String!
     email: String!
     password: String!
-    friends: [User]
     favorites: [Favorite]
 }
 
@@ -38,8 +37,8 @@ type Comment {
 
 type Query {
 users : [User]!
-user(userId: ID!): Profile
-me: Profile
+user(username: String!): User
+me: User
 blogs(user: String): [Blog]
 blog (blogId: ID!)
 myBlogs: [Blog]
