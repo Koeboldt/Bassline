@@ -1,59 +1,59 @@
 // Import necessary modules
-const Post = require('../models/Post');
+const Blog = require('../models/Blog');
 
 // Controller functions
-const postController = {
-  // Controller function to get all posts
-  getAllPosts: async (req, res) => {
+const blogController = {
+  // Controller function to get all blogs
+  getAllBlogs: async (req, res) => {
     try {
-      const posts = await Post.find();
-      res.json(posts);
+      const blogs = await Blog.find();
+      res.json(blogs);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
   },
 
-  // Controller function to create a new post
-  createPost: async (req, res) => {
-    const post = new Post({
+  // Controller function to create a new blog
+  createBlog: async (req, res) => {
+    const blog = new Blog({
       title: req.body.title,
       content: req.body.content
     });
 
     try {
-      const newPost = await post.save();
-      res.status(201).json(newPost);
+      const newBlog = await blog.save();
+      res.status(201).json(newBlog);
     } catch (err) {
       res.status(400).json({ message: err.message });
     }
   },
 
-  // Controller function to update a post
-  updatePost: async (req, res) => {
+  // Controller function to update a blog
+  updateBlog: async (req, res) => {
     try {
       const { id } = req.params;
       const { title, content } = req.body;
 
-      const updatedPost = await Post.findByIdAndUpdate(id, { title, content }, { new: true });
+      const updatedBlog = await Blog.findByIdAndUpdate(id, { title, content }, { new: true });
 
-      if (!updatedPost) {
+      if (!updatedBlog) {
         return res.status(404).json({ message: 'Post not found' });
       }
 
-      res.json(updatedPost);
+      res.json(updatedBlog);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
   },
 
-  // Controller function to delete a post
-  deletePost: async (req, res) => {
+  // Controller function to delete a blog
+  deleteBlog: async (req, res) => {
     try {
       const { id } = req.params;
 
-      const deletedPost = await Post.findByIdAndDelete(id);
+      const deletedBlog = await Blog.findByIdAndDelete(id);
 
-      if (!deletedPost) {
+      if (!deletedBlog) {
         return res.status(404).json({ message: 'Post not found' });
       }
 
@@ -64,4 +64,4 @@ const postController = {
   }
 };
 
-module.exports = postController;
+module.exports = blogController;
