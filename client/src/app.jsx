@@ -1,16 +1,15 @@
 import { Outlet } from 'react-router-dom'
-import Login from './pages/Login1'
-import Header from './components/Header'
-import Footer from './components/Footer'
 import 'antd/dist/antd.css';
+import HeaderComponent from './components/Header';
+import FooterComponent from './components/Footer';
 
 function App() {
 
   return (
     <>
-    <Header />
+    <HeaderComponent />
       <Outlet />
-      <Footer />
+      <FooterComponent />
     </>
   )
 }

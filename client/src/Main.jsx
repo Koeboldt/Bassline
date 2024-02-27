@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LoginSignUp from './components/LoginSignUp.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
+import Search from './pages/Search.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: 'loginsignup',
         element: <LoginSignUp />
+      },
+      {
+        path: 'search',
+        element: <Search />
       },
       {
         path: '*',
