@@ -12,7 +12,7 @@ const LastFmSearch = forwardRef((props, ref) => {
 
   const determineSearchType = (input) => {
     if (input.includes(':')) {
-      const [prefix, term] = input.split(':');
+      const [prefix] = input.split(':');
       switch (prefix.toLowerCase()) {
         case 'artist':
           return 'artist';
@@ -71,5 +71,7 @@ const LastFmSearch = forwardRef((props, ref) => {
     </div>
   );
 });
+
+LastFmSearch.displayName = 'LastFmSearch';
 
 export default LastFmSearch;
