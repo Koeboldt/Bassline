@@ -13,6 +13,7 @@
     "@apollo/client": "^3.9.5",
     "antd": "^5.14.1",
     "axios": "^1.6.7",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1"
