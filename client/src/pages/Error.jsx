@@ -1,5 +1,6 @@
 import {useRouteError} from "react-router-dom";
 import { Row, Col } from 'antd';
+import smashedGuitar from '../components/assets/img/Smashed_Gutars_Matt_Sorum_6465370891.jpg';
 
 export default function ErrorPage () {
     const error = useRouteError();
@@ -9,7 +10,7 @@ export default function ErrorPage () {
         <div id="error page">
             <Row justify="center">
                 <Col xs={24} sm={12} md={10} lg={8} xl={6}>
-                    <img src="../components/assets/img/Smashed_Gutars_Matt_Sorum_6465370891.jpg" alt="Smashed Guitar" />
+                    <img src={smashedGuitar} alt="Smashed Guitar" />
                 </Col>
                 <Col xs={24} sm={12} md={14} lg={16} xl={18}>
                     <div className="error-content">
