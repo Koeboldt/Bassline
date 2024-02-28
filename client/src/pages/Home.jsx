@@ -7,7 +7,7 @@ export default function Home() {
             <Affix style={{ position: 'fixed', top: 0, left: 0, zIndex: 999 }}>
                 <h1>Bassline!</h1>
             </Affix>
-            <div style={{ position: 'absolute', bottom: 15, right: 15, marginRight: '20px', marginBottom: '20px', color: 'white' }}>
+            <div style={{ position: 'absolute', bottom: 15, right: 15, marginRight: '20px', marginBottom: '20px', padding: '10px', borderRadius: '10px', backgroundColor: 'rgba(255, 255, 255, 0.5)' color: 'white' }}>
                 <p>
                     Welcome to Bassline, a place for music buffs of every genre to come and discuss their favorite artists, albums, and songs! 
                     Whether you'd like to study some timeless classics, or are looking for todays hottest hits, Bassline has you covered with a deep community that shares your passion!
