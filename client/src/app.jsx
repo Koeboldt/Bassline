@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import 'antd/dist/antd.css';
+import 'antd/dist/reset.css';
 import HeaderComponent from './components/Header';
 import FooterComponent from './components/Footer';
 
