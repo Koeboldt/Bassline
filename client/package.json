@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
-    "antd": "^5.14.1",
+    "@auth0/auth0-react": "^2.2.4",
+    "antd": "^5.14.2",
     "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
