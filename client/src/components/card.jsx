@@ -12,9 +12,13 @@ const CustomCard = ({ artist, song, album }) => {
       hoverable
       style={{ width: 300 }}
       cover={<img alt="album cover" src={album.coverUrl} />}
+      actions={[
+        <Button key='addFavorites' onClick={handleAddToFavorites}>
+          Add to favorites
+        </Button>
+      ]}
     >
       <Meta title={song} description={artist} />
-      <Button onClick={handleAddToFavorites}>Add to Favorites</Button>
     </Card>
   );
 };
