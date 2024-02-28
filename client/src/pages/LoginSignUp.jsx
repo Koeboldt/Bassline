@@ -4,12 +4,14 @@ import '../components/assets/css/LoginSignUp.css';
 import user_icon from '../components/assets/img/account-box-line.png';
 import email_icon from '../components/assets/img/at-line.png';
 import password_icon from '../components/assets/img/lock-password-line.png';
+import backgroundImage from '../components/assets/img/Head_of_Five_Strings_Bass_Guitar_51875534926.jpg'
 
 const LoginSignUp = () => {
 
     const [action,setAction] = useState('Sign Up');
 
     return (
+        <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh' }}>
         <div className='container'>
             <div className='header'>
                 <div className='text'>{action}</div>
@@ -36,6 +38,7 @@ const LoginSignUp = () => {
                     <div className={action==='Sign Up'?'submit gray':'submit'} onClick={()=>{setAction('Login')}}>Login</div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
