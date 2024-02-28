@@ -55,9 +55,8 @@ const LastFmSearch = forwardRef((props, ref) => {
   }));
 
   return (
-    <div>
-      <h1>Last.fm Search</h1>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+    <div className='search-container'>
+      <input type="text" placeholder='Search for music' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       <button onClick={handleSearch}>Search</button>
       <select value={searchType} onChange={(e) => setSearchType(e.target.value)}>
         <option value="artist">Artist</option>
