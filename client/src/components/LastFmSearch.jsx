@@ -1,5 +1,8 @@
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import axios from 'axios';
+import { Input, Button, Select, List } from 'antd';
+
+const { Option } = Select;
 
 const LastFmSearch = forwardRef((props, ref) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +15,7 @@ const LastFmSearch = forwardRef((props, ref) => {
 
   const determineSearchType = (input) => {
     if (input.includes(':')) {
-      const [prefix, term] = input.split(':');
+      const [prefix] = input.split(':');
       switch (prefix.toLowerCase()) {
         case 'artist':
           return 'artist';
@@ -56,20 +59,31 @@ const LastFmSearch = forwardRef((props, ref) => {
 
   return (
     <div className='search-container'>
-      <input type="text" placeholder='Search for music' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
-      <select value={searchType} onChange={(e) => setSearchType(e.target.value)}>
-        <option value="artist">Artist</option>
-        <option value="album">Album</option>
-        <option value="track">Track</option>
-      </select>
-      <ul>
-        {searchResults.map((artist, artistName) => (
-          <li key={artistName}>{artist.name}</li>
-        ))}
-      </ul>
+      <Input 
+        placeholder='Search for music'
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ marginBottom: '10px' }}
+         />
+      <Button type='primary' onClick={handleSearch} style={{ marginRight: '10px'}}>Search</Button>
+      <Select value={searchType} onChange={(value) => setSearchType(value)} style={{ width: '120px', marginRight: '10px' }}>
+        <Option value="artist">Artist</Option>
+        <Option value="album">Album</Option>
+        <Option value="track">Track</Option>
+      </Select>
+      <List
+        dataSource={searchResults}
+        renderItem={(artist) => (
+          <List.Item key={artist.name}>
+            {artist.name}
+          </List.Item>
+        )}
+        style={{ marginTop: '10px' }}
+        />
     </div>
   );
 });
+
+LastFmSearch.displayName = 'LastFmSearch';
 
 export default LastFmSearch;
