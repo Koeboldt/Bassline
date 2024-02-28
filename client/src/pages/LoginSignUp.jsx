@@ -19,7 +19,7 @@ const LoginSignUp = () => {
             <div className='inputs'>
                 {action==='Login'?<div></div>:<div className='input'>
                     <img src={user_icon} alt='user' />
-                    <input type='text' placeholder='Name' />
+                    <input type='text' placeholder='Username' />
                 </div>}
 
                 <div className='input'>
