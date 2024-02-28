@@ -7,7 +7,6 @@ import LoginSignUp from './pages/LoginSignUp.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import SearchPage from './pages/SearchPage.jsx'
-import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
   {
