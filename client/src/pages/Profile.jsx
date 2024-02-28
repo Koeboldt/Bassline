@@ -19,7 +19,7 @@ const MyProfile = () => {
   }
 
   if (!isAuthenticated) {
-    return <p>User not authenticated</p>;
+    return <Text>User not authenticated</Text>;
   }
 
   const { me } = data || {};
@@ -27,17 +27,17 @@ const MyProfile = () => {
 
   return (
     <div>
-      <h1>Profile</h1>
-      <h2>{name}</h2>
-      <p>Favorites:</p>
-      <ul>
-        {favorites &&
-          favorites.map((favorite) => (
-            <li key={favorite._id}>
-              {favorite.songName} by {favorite.artistName}
-            </li>
-          ))}
-      </ul>
+      <Title level={2}>Profile</Title>
+      <Title level={3}>{name}</Title>
+      <Text>Favorites:</Text>
+      <List
+        dataSource={favorites}
+        renderItem={(favorite) => (
+          <List.Item key={favorite.id}>
+            {favorite.songName} by {favorite.artistName}
+          </List.Item>
+        )}
+      />
     </div>
   );
 };
