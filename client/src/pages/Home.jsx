@@ -3,7 +3,7 @@ import backgroundImage from '../components/assets/img/Head_of_Five_Strings_Bass_
 
 export default function Home() {
     return (
-        <div style={{ bankgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh' }}>
+        <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh' }}>
             <Affix style={{ position: 'fixed', top: 0, left: 0, zIndex: 999 }}>
                 <h1>Bassline!</h1>
             </Affix>
