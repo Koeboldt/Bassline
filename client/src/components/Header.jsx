@@ -8,10 +8,9 @@ function HeaderComponent() {
     <Layout className="layout">
       <Header>
         <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1"><Link to='/'>Home</Link></Menu.Item>
+          <Menu.Item key="1"><Link to='/'>Login/Sign up</Link></Menu.Item>
           <Menu.Item key="2"><Link to='/profile'>Profile</Link></Menu.Item>
           <Menu.Item key="3"><Link to='/search'>Search</Link></Menu.Item>
-          <Menu.Item key="4"><Link to='/loginsignup'>Login/Sign up</Link></Menu.Item>
         </Menu>
       </Header>
     </Layout>
