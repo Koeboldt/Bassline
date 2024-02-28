@@ -5,7 +5,9 @@ export default function Home() {
     return (
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh', position: 'relative' }}>
             <Affix style={{ position: 'fixed', top: 0, left: 0, zIndex: 999 }}>
-                <h1>Bassline!</h1>
+                <div style={{ padding: '10px', borderRadius: '10px', backgroundColor: 'rgba(255, 255, 255, 0.5)', color: 'white' }}>
+                    <h1>Bassline!</h1>
+                </div>
             </Affix>
             <div style={{ position: 'absolute', bottom: 15, right: 15, marginRight: '20px', marginBottom: '20px', padding: '10px', borderRadius: '10px', backgroundColor: 'rgba(255, 255, 255, 0.5)' color: 'white' }}>
                 <p>
