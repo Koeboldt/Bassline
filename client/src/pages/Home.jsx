@@ -15,8 +15,8 @@ export default function Home() {
                     Whether you'd like to study some timeless classics, or are looking for todays hottest hits, Bassline has you covered with a deep community that shares your passion!
                 </p>
             </div>
-
+            </div>
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh' }}>
-        </div>
+        
     )
 }
