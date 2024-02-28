@@ -8,9 +8,9 @@ function FooterComponent() {
   return (
     <Layout className="layout">
       <row justify="center">
-        <Footer className="footer">
+        <Col className="footer">
           ©2024 Bassline Inc. All Rights Reserved.
-        </Footer>
+        </Col>
       </row>
     </Layout>
   );
