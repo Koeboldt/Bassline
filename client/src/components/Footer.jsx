@@ -7,11 +7,11 @@ const { Footer } = Layout;
 function FooterComponent() {
   return (
     <Layout className="layout">
-      <row justify="center">
+      <Row justify="center">
         <Col className="footer">
           ©2024 Bassline Inc. All Rights Reserved.
         </Col>
-      </row>
+      </Row>
     </Layout>
   );
 }
