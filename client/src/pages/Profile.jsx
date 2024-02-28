@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@apollo/client';
+import { Spin, Typography, List } from 'antd';
 import { QUERY_USER } from '../utils/queries';
 
 const MyProfile = () => {
@@ -14,7 +15,7 @@ const MyProfile = () => {
   });
 
   if (isLoading || queryLoading) {
-    return <p>Loading...</p>;
+    return <Spin size='large' />;
   }
 
   if (!isAuthenticated) {
