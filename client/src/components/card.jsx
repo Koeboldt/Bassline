@@ -1,20 +1,21 @@
-
 import React from 'react';
-import { Card, Button } from 'antd';
+import { Card } from 'antd';
 
 const { Meta } = Card;
 
-const CustomCard = ({ artist, song, album }) => {
-    const handleAddToFavorites = () => {};
- //add handler for adding to favorites
+const CustomCard = ({ result, onCardClick }) => {
+  const handleCardClick = () => {
+    // Pass the relevant information to the parent component
+    onCardClick(result);
+  };
+
   return (
     <Card
       hoverable
-      style={{ width: 300 }}
-      cover={<img alt="album cover" src={album.coverUrl} />}
+      style={{ width: 300, marginBottom: 16 }}
+      onClick={handleCardClick}
     >
-      <Meta title={song} description={artist} />
-      <Button onClick={handleAddToFavorites}>Add to Favorites</Button>
+      <Meta title={result.name} />
     </Card>
   );
 };

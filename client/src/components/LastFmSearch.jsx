@@ -1,5 +1,6 @@
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import axios from 'axios';
+import CustomCard from './CustomCard'; // Import your CustomCard component
 
 const LastFmSearch = forwardRef((props, ref) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,7 +31,13 @@ const LastFmSearch = forwardRef((props, ref) => {
   const handleSearch = async () => {
     try {
       const apiKey = 'd622889e346a9e1f41da82e9ac409be5';
-      const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=${searchType}.search&${searchType}=${searchTerm}&api_key=${apiKey}&format=json`;
+      let apiUrl = '';
+
+      if (searchType === 'toptracks') {
+        apiUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${searchTerm}&api_key=${apiKey}&format=json`;
+      } else {
+        apiUrl = `https://ws.audioscrobbler.com/2.0/?method=${searchType}.search&${searchType}=${searchTerm}&api_key=${apiKey}&format=json`;
+      }
 
       const response = await axios.get(apiUrl);
 
@@ -64,11 +71,11 @@ const LastFmSearch = forwardRef((props, ref) => {
         <option value="album">Album</option>
         <option value="track">Track</option>
       </select>
-      <ul>
-        {searchResults.map((artist, artistName) => (
-          <li key={artistName}>{artist.name}</li>
+      <div>
+        {searchResults.map((result, index) => (
+          <CustomCard key={index} result={result} onCardClick={handleCardClick} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 });
