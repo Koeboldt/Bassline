@@ -67,10 +67,26 @@ const LastFmSearch = forwardRef((props, ref) => {
     }
   };
 
-  const handleCardClick = (artistName) => {
+  const handleCardClick = async (artistName) => {
     // Handle the card click for the artist search (e.g., fetch top songs)
+    
     console.log(`Clicked on artist: ${artistName}`);
     // Add your logic for handling the artist click
+    const apiKey = 'd622889e346a9e1f41da82e9ac409be5';
+     let apiUrl = `https://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${artistName}&api_key=${apiKey}&format=json`;
+
+    const response = await axios.get(apiUrl);
+    console.log (response.data);
+    if (response.data.toptracks) {
+      let matches = response.data.toptracks.track;
+      if (matches.length > 0) {
+        setSearchResults(matches);
+      } else {
+        console.error('No matches found in the API response.');
+      }
+    } else {
+      console.error('No matches found in the API response.');
+    }
   };
 
   useImperativeHandle(ref, () => ({
