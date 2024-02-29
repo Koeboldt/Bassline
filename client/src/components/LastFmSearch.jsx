@@ -115,15 +115,12 @@ const LastFmSearch = forwardRef((props, ref) => {
         <Option value="album">Album</Option>
         <Option value="track">Track</Option>
       </Select>
-      <List
-        dataSource={searchResults}
-        renderItem={(artist) => (
-          <List.Item key={artist.name}>
-            {artist.name}
-          </List.Item>
-        )}
-        style={{ marginTop: '10px' }}
-        />
+      <div>
+        {searchResults.map((searchResults, index) => (
+          <CustomCard style={{ marginTop: '10px' }} key={index} result={searchResults} onCardClick={handleCardClick} />
+        ))}
+      </div>
+        
     </div>
   );
 });
