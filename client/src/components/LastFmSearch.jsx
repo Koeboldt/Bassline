@@ -115,7 +115,7 @@ const LastFmSearch = forwardRef((props, ref) => {
         <Option value="album">Album</Option>
         <Option value="track">Track</Option>
       </Select>
-      <div>
+      <div className='cards-container'>
         {searchResults.map((searchResults, index) => (
           <CustomCard style={{ marginTop: '10px' }} key={index} result={searchResults} onCardClick={handleCardClick} />
         ))}
