@@ -6,11 +6,7 @@ const { typeDefs, resolvers } = require('./schemas/index');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-mongoose.connect('mongodb://localhost:27017/Bassline', { // Be sure to establish this connection in MongoDB
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bassline');
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

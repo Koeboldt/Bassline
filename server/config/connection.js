@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://basslineAdmin:DBPassword~~@cluster0.bubthl5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/bassline');
 
 module.exports = mongoose.connection;
