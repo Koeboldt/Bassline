@@ -2,25 +2,17 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-A blog for music fans.
+A music blog for saving favorites, engaging in discussion, and exploring new music!
 
 ## Table of Contents
-* [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
-* [Badges](#badges)
 * [Features](#features)
-* [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
-* [Badges](#badges)
-
-## Installation
-* TO BE ADDRESSED
 
 ## Usage
-* TO BE ADDRESSED
+This application can be used at: 
 
 ## Credits
 * GoodK-G, FirefoxFlareon, Tatro009, Koeboldt, CWOChris
@@ -28,17 +20,8 @@ A blog for music fans.
 ## License
 This project is licensed under the MIT license. https://opensource.org/licenses/MIT
 
-## Badges
-* NOT APPLICABLE
-
 ## Features
-* Option to purchase tickets for concerts with Stripe payments.
-
-## Contributing
-* NOT APPLICABLE
-
-## Tests
-* TO BE ADDRESSED
+* Search functionality that shows artists, albums, and tracks. When choosing an artist you will then be shown a list of their most popular songs!
 
 ## Questions
 * If you have any questions, you can reach me at c.w.rob2024@gmail.com or visit my GitHub profile at [CWOChris](https://github.com/CWOChris).
